@@ -501,7 +501,7 @@ public class RNCelevator {
 				}
 				newBLOCK.append("");
 				newBLOCK.append(System.getProperty("line.separator"));
-				
+				scanner.close();
 			}		
 		return newBLOCK;
 	}
@@ -536,15 +536,14 @@ public class RNCelevator {
 			scanner.close();
 			ResultFile.append(scriptWriter(BLOCK));
 			//BLOCK.setLength(0);
-			
-			// TODO Save commandfile								
-					File file = new File(SaveFileName);
-					BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-					try {					    
-					    writer.write(ResultFile.toString());
-					} finally {
-						if (writer != null) writer.close();
-					}
+											
+			File file = new File(SaveFileName);
+			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+			try {					    
+				writer.write(ResultFile.toString());
+			} finally {
+					if (writer != null) writer.close();
+			}
 								
 			
 						

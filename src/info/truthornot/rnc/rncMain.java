@@ -19,7 +19,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
+// import java.lang.reflect.Type;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +69,9 @@ public class rncMain {
 	private JFormattedTextField formattedTextField_13;
 	private JFormattedTextField formattedTextField_14;
 	private JFormattedTextField formattedTextField_15; // Start PdrDev number
+	private JLabel[] MSboard = new JLabel[20];;
+	
+	/*
 	private JLabel MSLabel_5;
 	private JLabel MSLabel_6;
 	private JLabel MSLabel_7;
@@ -89,6 +92,7 @@ public class rncMain {
 	private JLabel MSLabel_22;
 	private JLabel MSLabel_23;
 	private JLabel MSLabel_24;
+	*/
 	private JLabel ES1Label_3;
 	private JLabel ES1Label_4;
 	private JLabel ES1Label_5;
@@ -258,9 +262,7 @@ public class rncMain {
 	}
 	
 	private static String get_col(String line, String Delemiter, int numcol) {
-		String rez_data = "";
 		String col = "";
-		// "\"(),+-=<>?!@#$%^&*~'./\\";
 		int count = 0;
 		StringTokenizer st = new StringTokenizer(line, Delemiter, true);
 		while (st.hasMoreTokens()) {
@@ -268,13 +270,11 @@ public class rncMain {
 			if ((!col.equals("")) && (!col.equals(Delemiter))) {
 				count++;
 				if (count == numcol) {
-					rez_data = col;
-					break;
+					return col;
 				}
 			}
 		}
-
-		return rez_data;
+		return "";
 	}
 	
 	private List<String> getIPList(String ipFrom, String ipTo){
@@ -539,6 +539,8 @@ public class rncMain {
 	}
 	
 	public void refresh_slot_data() {
+		for(int i=0; i < 18; i++){MSboard[i].setIcon(Board);}
+		/*
 		 MSLabel_5.setIcon(Board);
 		 MSLabel_6.setIcon(Board);	
 		 MSLabel_7.setIcon(Board);	
@@ -559,6 +561,7 @@ public class rncMain {
 		 MSLabel_22.setIcon(Board);
 		 MSLabel_23.setIcon(Board);
 		 MSLabel_24.setIcon(Board);
+		 */
 		 ES1Label_3.setIcon(Board);
 		 ES1Label_4.setIcon(Board);
 		 ES1Label_5.setIcon(Board);
@@ -680,6 +683,10 @@ public class rncMain {
 		 ES5Label_25.setIcon(Board);
 		 ES5Label_26.setIcon(Board);
 		for (int i = 0; i < RNC.get_MS_Count(); i++){	
+			int slotNo = Integer.parseInt(RNC.get_MS_SlotData(i).get_Slot());
+			MSboard[slotNo-5].setIcon(Board_selected);
+			
+			/*
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("5")) MSLabel_5.setIcon(Board_selected);
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("6")) MSLabel_6.setIcon(Board_selected);	
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("7")) MSLabel_7.setIcon(Board_selected);	
@@ -700,6 +707,7 @@ public class rncMain {
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("22")) MSLabel_22.setIcon(Board_selected);
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("23")) MSLabel_23.setIcon(Board_selected);
 			if(RNC.get_MS_SlotData(i).get_Slot().equalsIgnoreCase("24")) MSLabel_24.setIcon(Board_selected);
+			*/
 		}
 		for (int i = 0; i < RNC.get_ES1_Count(); i++){	
 			if(RNC.get_ES1_SlotData(i).get_Slot().equalsIgnoreCase("3")) ES1Label_3.setIcon(Board_selected);
@@ -1032,6 +1040,73 @@ public class rncMain {
 		panel_10.add(MSLabel_4);
 		MSLabel_4.setIcon(new ImageIcon(rncMain.class.getResource("/images/inactive_Board.png")));
 		
+		
+		
+		MouseAdapter MSboardEv = new MouseAdapter(){
+			@Override
+			public void mouseExited(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < MSboard.length; i++){
+					if(atractor == MSboard[i]){
+						if (RNC.get_MS_SlotData_byName(String.valueOf(i+5)) == -1){
+							MSboard[i].setIcon(Board);
+						}
+					}
+				}
+				
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < MSboard.length; i++){
+					if(atractor == MSboard[i]){
+						if (RNC.get_MS_SlotData_byName(String.valueOf(i+5)) == -1){
+							MSboard[i].setIcon(Board_selected);
+							SlotData newBoard = new SlotData();
+							newBoard.set_Slot(String.valueOf(i+5));
+							RNC.add_MS_SlotData(newBoard);
+							textField.setText(String.valueOf(RNC.get_Total_Board()));
+							textField_1.setText(RNC.get_Total_Board_List());
+						}else{
+							MSboard[i].setIcon(Board);
+							RNC.delete_MS_SlotData_byName(String.valueOf(i+5));
+							textField.setText(String.valueOf(RNC.get_Total_Board()));
+							textField_1.setText(RNC.get_Total_Board_List());
+						}
+					}
+				}				
+			}
+		};
+		
+		MouseMotionAdapter MSboardMo = new MouseMotionAdapter(){
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < MSboard.length; i++){
+					if(atractor == MSboard[i]){
+						if (RNC.get_MS_SlotData_byName(String.valueOf(i+5)) == -1){
+							MSboard[i].setIcon(Board_over);
+						}
+					}
+				}
+				
+			}
+		};
+		
+		
+		int p = 62;
+		for(int i=0; i<20; i++){
+			MSboard[i] = new JLabel("");
+			MSboard[i].addMouseListener(MSboardEv);
+			MSboard[i].addMouseMotionListener(MSboardMo);
+			MSboard[i].setBounds(p, 27, 14, 193);
+			panel_10.add(MSboard[i]);
+			MSboard[i].setIcon(Board);
+			p+=13;
+		}
+		
+		///////////////////////////////////////////////////////////////////////////////////////
+		/*
 		
 		MSLabel_5 = new JLabel(""); //Slot 5
 		MSLabel_5.addMouseListener(new MouseAdapter() {
@@ -1773,6 +1848,9 @@ public class rncMain {
 		MSLabel_24.setIcon(Board);
 		MSLabel_24.setBounds(309, 27, 14, 193);
 		panel_10.add(MSLabel_24);
+		
+		*/
+		
 		
 		JLabel MSLabel_25 = new JLabel("");
 		MSLabel_25.setIcon(new ImageIcon(rncMain.class.getResource("/images/inactive_Board.png")));
