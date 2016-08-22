@@ -69,34 +69,17 @@ public class rncMain {
 	private JFormattedTextField formattedTextField_13;
 	private JFormattedTextField formattedTextField_14;
 	private JFormattedTextField formattedTextField_15; // Start PdrDev number
+	private int[] MSSlot = new int[] {8,24,37,50,63,76,88,101,114,127,141,154,167,180,193,206,219,232,245,258,271,284,297,310,323,336,349,364};
+	
 	private JLabel[] MSboard = new JLabel[20];
+	private JLabel[] MSlabel = new JLabel[28];
 
 	private JLabel[] ES1board = new JLabel[24];
+	private JLabel[] ES1label = new JLabel[28];
 
-	private JLabel ES2Label_3;
-	private JLabel ES2Label_4;
-	private JLabel ES2Label_5;
-	private JLabel ES2Label_6;
-	private JLabel ES2Label_7;
-	private JLabel ES2Label_8;
-	private JLabel ES2Label_9;
-	private JLabel ES2Label_10;
-	private JLabel ES2Label_11;
-	private JLabel ES2Label_12;
-	private JLabel ES2Label_13;
-	private JLabel ES2Label_14;
-	private JLabel ES2Label_15;
-	private JLabel ES2Label_16;
-	private JLabel ES2Label_17;
-	private JLabel ES2Label_18;
-	private JLabel ES2Label_19;
-	private JLabel ES2Label_20;
-	private JLabel ES2Label_21;
-	private JLabel ES2Label_22;
-	private JLabel ES2Label_23;
-	private JLabel ES2Label_24;
-	private JLabel ES2Label_25;
-	private JLabel ES2Label_26;
+	private JLabel[] ES2board = new JLabel[24];
+	private JLabel[] ES2label = new JLabel[28];
+	
 	private JLabel ES3Label_3;
 	private JLabel ES3Label_4;
 	private JLabel ES3Label_5;
@@ -495,32 +478,10 @@ public class rncMain {
 	}
 	
 	public void refresh_slot_data() {
-		for(int i=0; i < 20; i++){MSboard[i].setIcon(Board);}
-		for(int i=0; i < 24; i++){ES1board[i].setIcon(Board);}
-		 ES2Label_3.setIcon(Board);
-		 ES2Label_4.setIcon(Board);
-		 ES2Label_5.setIcon(Board);
-		 ES2Label_6.setIcon(Board);	
-		 ES2Label_7.setIcon(Board);	
-		 ES2Label_8.setIcon(Board);	
-		 ES2Label_9.setIcon(Board);
-		 ES2Label_10.setIcon(Board);
-		 ES2Label_11.setIcon(Board);
-		 ES2Label_12.setIcon(Board);
-		 ES2Label_13.setIcon(Board);
-		 ES2Label_14.setIcon(Board);
-		 ES2Label_15.setIcon(Board);
-		 ES2Label_16.setIcon(Board);
-		 ES2Label_17.setIcon(Board);
-		 ES2Label_18.setIcon(Board);
-		 ES2Label_19.setIcon(Board);
-		 ES2Label_20.setIcon(Board);
-		 ES2Label_21.setIcon(Board);
-		 ES2Label_22.setIcon(Board);
-		 ES2Label_23.setIcon(Board);
-		 ES2Label_24.setIcon(Board);
-		 ES2Label_25.setIcon(Board);
-		 ES2Label_26.setIcon(Board);
+		for(int i=0; i < 20; i++) MSboard[i].setIcon(Board);
+		for(int i=0; i < 24; i++) ES1board[i].setIcon(Board);
+		for(int i=0; i < 24; i++) ES2board[i].setIcon(Board);
+
 		 ES3Label_3.setIcon(Board);
 		 ES3Label_4.setIcon(Board);
 		 ES3Label_5.setIcon(Board);
@@ -603,30 +564,8 @@ public class rncMain {
 			ES1board[slotNo-3].setIcon(Board_selected);
 		}
 		for (int i = 0; i < RNC.get_ES2_Count(); i++){	
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("3")) ES2Label_3.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("4")) ES2Label_4.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("5")) ES2Label_5.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("6")) ES2Label_6.setIcon(Board_selected);	
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("7")) ES2Label_7.setIcon(Board_selected);	
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("8")) ES2Label_8.setIcon(Board_selected);	
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("9")) ES2Label_9.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("10")) ES2Label_10.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("11")) ES2Label_11.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("12")) ES2Label_12.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("13")) ES2Label_13.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("14")) ES2Label_14.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("15")) ES2Label_15.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("16")) ES2Label_16.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("17")) ES2Label_17.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("18")) ES2Label_18.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("19")) ES2Label_19.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("20")) ES2Label_20.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("21")) ES2Label_21.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("22")) ES2Label_22.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("23")) ES2Label_23.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("24")) ES2Label_24.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("25")) ES2Label_25.setIcon(Board_selected);
-			if(RNC.get_ES2_SlotData(i).get_Slot().equalsIgnoreCase("26")) ES2Label_26.setIcon(Board_selected);
+			int slotNo = Integer.parseInt(RNC.get_ES2_SlotData(i).get_Slot());
+			ES2board[slotNo-3].setIcon(Board_selected);
 		}
 		for (int i = 0; i < RNC.get_ES3_Count(); i++){	
 			if(RNC.get_ES3_SlotData(i).get_Slot().equalsIgnoreCase("3")) ES3Label_3.setIcon(Board_selected);
@@ -994,173 +933,23 @@ public class rncMain {
 		MSLabel_28.setBounds(361, 27, 14, 193);
 		panel_10.add(MSLabel_28);		
 		
-		JLabel MSLabel_1_1 = new JLabel("1");
-		MSLabel_1_1.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		MSLabel_1_1.setBounds(8, 10, 12, 15);
-		panel_10.add(MSLabel_1_1);
-		MSLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel MSLabel_1_2 = new JLabel("2");
-		MSLabel_1_2.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_2.setBounds(24, 10, 12, 15);
-		panel_10.add(MSLabel_1_2);
-		
-		JLabel MSLabel_1_3 = new JLabel("3");
-		MSLabel_1_3.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_3.setBounds(37, 10, 12, 15);
-		panel_10.add(MSLabel_1_3);
-		
-		JLabel MSLabel_1_4 = new JLabel("4");
-		MSLabel_1_4.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_4.setBounds(50, 10, 12, 15);
-		panel_10.add(MSLabel_1_4);
-		
-		JLabel MSLabel_1_5 = new JLabel("5");
-		MSLabel_1_5.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_5.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_5.setBounds(63, 10, 12, 15);
-		panel_10.add(MSLabel_1_5);
-		
-		JLabel MSLabel_1_6 = new JLabel("6");
-		MSLabel_1_6.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_6.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_6.setBounds(76, 10, 12, 15);
-		panel_10.add(MSLabel_1_6);
-		
-		JLabel MSLabel_1_7 = new JLabel("7");
-		MSLabel_1_7.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_7.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_7.setBounds(88, 10, 12, 15);
-		panel_10.add(MSLabel_1_7);
-		
-		JLabel MSLabel_1_8 = new JLabel("8");
-		MSLabel_1_8.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_8.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_8.setBounds(101, 10, 12, 15);
-		panel_10.add(MSLabel_1_8);
-		
-		JLabel MSLabel_1_9 = new JLabel("9");
-		MSLabel_1_9.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_9.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		MSLabel_1_9.setBounds(114, 10, 12, 15);
-		panel_10.add(MSLabel_1_9);
-		
-		JLabel MSLabel_1_10 = new JLabel("10");
-		MSLabel_1_10.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_10.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_10.setBounds(127, 10, 12, 15);
-		panel_10.add(MSLabel_1_10);
-		
-		JLabel MSLabel_1_11 = new JLabel("11");
-		MSLabel_1_11.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_11.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_11.setBounds(141, 10, 12, 15);
-		panel_10.add(MSLabel_1_11);
-		
-		JLabel MSLabel_1_12 = new JLabel("12");
-		MSLabel_1_12.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_12.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_12.setBounds(154, 10, 12, 15);
-		panel_10.add(MSLabel_1_12);
-		
-		JLabel MSLabel_1_13 = new JLabel("13");
-		MSLabel_1_13.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_13.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_13.setBounds(167, 10, 12, 15);
-		panel_10.add(MSLabel_1_13);
-		
-		JLabel MSLabel_1_14 = new JLabel("14");
-		MSLabel_1_14.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_14.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_14.setBounds(180, 10, 12, 15);
-		panel_10.add(MSLabel_1_14);
-		
-		JLabel MSLabel_1_15 = new JLabel("15");
-		MSLabel_1_15.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_15.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_15.setBounds(193, 10, 12, 15);
-		panel_10.add(MSLabel_1_15);
-		
-		JLabel MSLabel_1_16 = new JLabel("16");
-		MSLabel_1_16.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_16.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_16.setBounds(206, 10, 12, 15);
-		panel_10.add(MSLabel_1_16);
-		
-		JLabel MSLabel_1_17 = new JLabel("17");
-		MSLabel_1_17.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_17.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_17.setBounds(219, 10, 12, 15);
-		panel_10.add(MSLabel_1_17);
-		
-		JLabel MSLabel_1_18 = new JLabel("18");
-		MSLabel_1_18.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_18.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_18.setBounds(232, 10, 12, 15);
-		panel_10.add(MSLabel_1_18);
-		
-		JLabel MSLabel_1_19 = new JLabel("19");
-		MSLabel_1_19.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_19.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_19.setBounds(245, 10, 12, 15);
-		panel_10.add(MSLabel_1_19);
-		
-		JLabel MSLabel_1_20 = new JLabel("20");
-		MSLabel_1_20.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_20.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_20.setBounds(258, 10, 12, 15);
-		panel_10.add(MSLabel_1_20);
-		
-		JLabel MSLabel_1_21 = new JLabel("21");
-		MSLabel_1_21.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_21.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_21.setBounds(271, 10, 12, 15);
-		panel_10.add(MSLabel_1_21);				
-		
-		JLabel MSLabel_1_22 = new JLabel("22");		
-		MSLabel_1_22.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_22.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_22.setBounds(284, 10, 12, 15);
-		panel_10.add(MSLabel_1_22);
-		
-		JLabel MSLabel_1_23 = new JLabel("23");		
-		MSLabel_1_23.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_23.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_23.setBounds(297, 10, 12, 15);
-		panel_10.add(MSLabel_1_23);
-		
-		JLabel MSLabel_1_24 = new JLabel("24");		
-		MSLabel_1_24.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_24.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_24.setBounds(310, 10, 12, 15);
-		panel_10.add(MSLabel_1_24);
-		
-		JLabel MSLabel_1_25 = new JLabel("25");
-		MSLabel_1_25.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_25.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_25.setBounds(323, 10, 12, 15);
-		panel_10.add(MSLabel_1_25);
-		
-		JLabel MSLabel_1_26 = new JLabel("26");
-		MSLabel_1_26.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_26.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_26.setBounds(336, 10, 12, 15);
-		panel_10.add(MSLabel_1_26);
-		
-		JLabel MSLabel_1_27 = new JLabel("27");
-		MSLabel_1_27.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_27.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		MSLabel_1_27.setBounds(349, 10, 12, 15);
-		panel_10.add(MSLabel_1_27);
-		
-		JLabel MSLabel_1_28 = new JLabel("28");
-		MSLabel_1_28.setHorizontalAlignment(SwingConstants.CENTER);
-		MSLabel_1_28.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		MSLabel_1_28.setBounds(364, 10, 14, 15);
-		panel_10.add(MSLabel_1_28);
+		// Fill label for MS subrack slot title
+		for(int i=0; i<28; i++){
+			MSlabel[i] = new JLabel(String.valueOf(i+1));
+			if (i == 0 | i == 27)
+				MSlabel[i].setFont(new Font("Vrinda", Font.PLAIN, 12));
+			else if (i < 9)
+				MSlabel[i].setFont(new Font("Vrinda", Font.PLAIN, 11));
+			else
+				MSlabel[i].setFont(new Font("Vrinda", Font.PLAIN, 10));
+			if (i == 27)
+				MSlabel[i].setBounds(MSSlot[i], 10, 14, 15);
+			else
+				MSlabel[i].setBounds(MSSlot[i], 10, 12, 15);
+			panel_10.add(MSlabel[i]);
+			MSlabel[i].setHorizontalAlignment(SwingConstants.CENTER);
+		}		
 								
 		
 		JLabel MSLabel = new JLabel("Subrack MS");
@@ -1251,8 +1040,7 @@ public class rncMain {
 			ES1board[i].setIcon(Board);
 			p+=13;
 		}
-				
-		
+						
 		
 		JLabel ES1Label_27 = new JLabel("");
 		ES1Label_27.setIcon(new ImageIcon(rncMain.class.getResource("/images/SCXB3.png")));
@@ -1264,174 +1052,23 @@ public class rncMain {
 		ES1Label_28.setBounds(361, 27, 14, 193);
 		panel_11.add(ES1Label_28);		
 		
-		JLabel ES1Label_1_1 = new JLabel("1");
-		ES1Label_1_1.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		ES1Label_1_1.setBounds(8, 10, 12, 15);
-		panel_11.add(ES1Label_1_1);
-		ES1Label_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel ES1Label_1_2 = new JLabel("2");
-		ES1Label_1_2.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_2.setBounds(24, 10, 12, 15);
-		panel_11.add(ES1Label_1_2);
-		
-		JLabel ES1Label_1_3 = new JLabel("3");
-		ES1Label_1_3.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_3.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_3.setBounds(37, 10, 12, 15);
-		panel_11.add(ES1Label_1_3);
-		
-		JLabel ES1Label_1_4 = new JLabel("4");
-		ES1Label_1_4.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_4.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_4.setBounds(50, 10, 12, 15);
-		panel_11.add(ES1Label_1_4);
-		
-		JLabel ES1Label_1_5 = new JLabel("5");
-		ES1Label_1_5.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_5.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_5.setBounds(63, 10, 12, 15);
-		panel_11.add(ES1Label_1_5);
-		
-		JLabel ES1Label_1_6 = new JLabel("6");
-		ES1Label_1_6.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_6.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_6.setBounds(76, 10, 12, 15);
-		panel_11.add(ES1Label_1_6);
-		
-		JLabel ES1Label_1_7 = new JLabel("7");
-		ES1Label_1_7.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_7.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_7.setBounds(88, 10, 12, 15);
-		panel_11.add(ES1Label_1_7);
-		
-		JLabel ES1Label_1_8 = new JLabel("8");
-		ES1Label_1_8.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_8.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_8.setBounds(101, 10, 12, 15);
-		panel_11.add(ES1Label_1_8);
-		
-		JLabel ES1Label_1_9 = new JLabel("9");
-		ES1Label_1_9.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_9.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES1Label_1_9.setBounds(114, 10, 12, 15);
-		panel_11.add(ES1Label_1_9);
-		
-		JLabel ES1Label_1_10 = new JLabel("10");
-		ES1Label_1_10.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_10.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_10.setBounds(127, 10, 12, 15);
-		panel_11.add(ES1Label_1_10);
-		
-		JLabel ES1Label_1_11 = new JLabel("11");
-		ES1Label_1_11.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_11.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_11.setBounds(141, 10, 12, 15);
-		panel_11.add(ES1Label_1_11);
-		
-		JLabel ES1Label_1_12 = new JLabel("12");
-		ES1Label_1_12.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_12.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_12.setBounds(154, 10, 12, 15);
-		panel_11.add(ES1Label_1_12);
-		
-		JLabel ES1Label_1_13 = new JLabel("13");
-		ES1Label_1_13.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_13.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_13.setBounds(167, 10, 12, 15);
-		panel_11.add(ES1Label_1_13);
-		
-		JLabel ES1Label_1_14 = new JLabel("14");
-		ES1Label_1_14.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_14.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_14.setBounds(180, 10, 12, 15);
-		panel_11.add(ES1Label_1_14);
-		
-		JLabel ES1Label_1_15 = new JLabel("15");
-		ES1Label_1_15.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_15.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_15.setBounds(193, 10, 12, 15);
-		panel_11.add(ES1Label_1_15);
-		
-		JLabel ES1Label_1_16 = new JLabel("16");
-		ES1Label_1_16.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_16.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_16.setBounds(206, 10, 12, 15);
-		panel_11.add(ES1Label_1_16);
-		
-		JLabel ES1Label_1_17 = new JLabel("17");
-		ES1Label_1_17.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_17.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_17.setBounds(219, 10, 12, 15);
-		panel_11.add(ES1Label_1_17);
-		
-		JLabel ES1Label_1_18 = new JLabel("18");
-		ES1Label_1_18.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_18.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_18.setBounds(232, 10, 12, 15);
-		panel_11.add(ES1Label_1_18);
-		
-		JLabel ES1Label_1_19 = new JLabel("19");
-		ES1Label_1_19.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_19.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_19.setBounds(245, 10, 12, 15);
-		panel_11.add(ES1Label_1_19);
-		
-		JLabel ES1Label_1_20 = new JLabel("20");
-		ES1Label_1_20.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_20.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_20.setBounds(258, 10, 12, 15);
-		panel_11.add(ES1Label_1_20);
-		
-		JLabel ES1Label_1_21 = new JLabel("21");
-		ES1Label_1_21.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_21.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_21.setBounds(271, 10, 12, 15);
-		panel_11.add(ES1Label_1_21);				
-		
-		JLabel ES1Label_1_22 = new JLabel("22");		
-		ES1Label_1_22.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_22.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_22.setBounds(284, 10, 12, 15);
-		panel_11.add(ES1Label_1_22);
-		
-		JLabel ES1Label_1_23 = new JLabel("23");		
-		ES1Label_1_23.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_23.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_23.setBounds(297, 10, 12, 15);
-		panel_11.add(ES1Label_1_23);
-		
-		JLabel ES1Label_1_24 = new JLabel("24");		
-		ES1Label_1_24.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_24.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_24.setBounds(310, 10, 12, 15);
-		panel_11.add(ES1Label_1_24);
-		
-		JLabel ES1Label_1_25 = new JLabel("25");
-		ES1Label_1_25.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_25.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_25.setBounds(323, 10, 12, 15);
-		panel_11.add(ES1Label_1_25);
-		
-		JLabel ES1Label_1_26 = new JLabel("26");
-		ES1Label_1_26.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_26.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_26.setBounds(336, 10, 12, 15);
-		panel_11.add(ES1Label_1_26);
-		
-		JLabel ES1Label_1_27 = new JLabel("27");
-		ES1Label_1_27.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_27.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES1Label_1_27.setBounds(349, 10, 12, 15);
-		panel_11.add(ES1Label_1_27);
-		
-		JLabel ES1Label_1_28 = new JLabel("28");
-		ES1Label_1_28.setHorizontalAlignment(SwingConstants.CENTER);
-		ES1Label_1_28.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		ES1Label_1_28.setBounds(364, 10, 14, 15);
-		panel_11.add(ES1Label_1_28);
-								
+		// Fill label for ES1 subrack slot title
+		for(int i=0; i<28; i++){
+			ES1label[i] = new JLabel(String.valueOf(i+1));
+			if (i == 0 | i == 27)
+				ES1label[i].setFont(new Font("Vrinda", Font.PLAIN, 12));
+			else if (i < 9)
+				ES1label[i].setFont(new Font("Vrinda", Font.PLAIN, 11));
+			else
+				ES1label[i].setFont(new Font("Vrinda", Font.PLAIN, 10));
+			if (i == 27)
+				ES1label[i].setBounds(MSSlot[i], 10, 14, 15);
+			else
+				ES1label[i].setBounds(MSSlot[i], 10, 12, 15);
+			panel_11.add(ES1label[i]);
+			ES1label[i].setHorizontalAlignment(SwingConstants.CENTER);
+		}							
 		
 		JLabel ES1Label = new JLabel("Subrack ES-1");
 		ES1Label.setBounds(293, 231, 89, 14);
@@ -1458,896 +1095,72 @@ public class rncMain {
 		ES2Label_2.setBounds(23, 27, 14, 193);
 		panel_12.add(ES2Label_2);
 		ES2Label_2.setIcon(new ImageIcon(rncMain.class.getResource("/images/CMXB3.png")));
+		
+		
+		MouseAdapter ES2boardEv = new MouseAdapter(){
+			@Override
+			public void mouseExited(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < ES2board.length; i++){
+					if(atractor == ES2board[i]){
+						if (RNC.get_ES2_SlotData_byName(String.valueOf(i+3)) == -1){
+							ES2board[i].setIcon(Board);
+						}
+					}
+				}
 				
-		  ES2Label_3 = new JLabel(""); //Slot 3
-		ES2Label_3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("3") == -1){
-					ES2Label_3.setIcon(Board);
-				}
 			}
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("3") == -1){
-					ES2Label_3.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("3");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_3.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("3");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
+			public void mouseClicked(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < ES2board.length; i++){
+					if(atractor == ES2board[i]){
+						if (RNC.get_ES2_SlotData_byName(String.valueOf(i+3)) == -1){
+							ES2board[i].setIcon(Board_selected);
+							SlotData newBoard = new SlotData();
+							newBoard.set_Slot(String.valueOf(i+3));
+							RNC.add_ES2_SlotData(newBoard);
+							textField.setText(String.valueOf(RNC.get_Total_Board()));
+							textField_1.setText(RNC.get_Total_Board_List());
+						}else{
+							ES2board[i].setIcon(Board);
+							RNC.delete_ES2_SlotData_byName(String.valueOf(i+3));
+							textField.setText(String.valueOf(RNC.get_Total_Board()));
+							textField_1.setText(RNC.get_Total_Board_List());
+						}
+					}
+				}				
 			}
-		});
-		ES2Label_3.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("3") == -1){
-					ES2Label_3.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_3.setBounds(36, 27, 14, 193);
-		panel_12.add(ES2Label_3);
-		ES2Label_3.setIcon(Board);
+		};
 		
-		  ES2Label_4 = new JLabel(""); //Slot 4
-		ES2Label_4.addMouseListener(new MouseAdapter() {
+		MouseMotionAdapter ES2boardMo = new MouseMotionAdapter(){
 			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("4") == -1){
-					ES2Label_4.setIcon(Board);
+			public void mouseMoved(MouseEvent e) {
+				JLabel atractor = (JLabel) e.getSource();
+				for (int i = 0; i < ES2board.length; i++){
+					if(atractor == ES2board[i]){
+						if (RNC.get_ES2_SlotData_byName(String.valueOf(i+3)) == -1){
+							ES2board[i].setIcon(Board_over);
+						}
+					}
 				}
+				
 			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("4") == -1){
-					ES2Label_4.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("4");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_4.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("4");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_4.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("4") == -1){
-					ES2Label_4.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_4.setBounds(49, 27, 14, 193);
-		panel_12.add(ES2Label_4);
-		ES2Label_4.setIcon(Board);
+		};
 		
 		
-		  ES2Label_5 = new JLabel(""); //Slot 5
-		ES2Label_5.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("5") == -1){
-					ES2Label_5.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("5") == -1){
-					ES2Label_5.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("5");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_5.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("5");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_5.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("5") == -1){
-					ES2Label_5.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_5.setBounds(62, 27, 14, 193);
-		panel_12.add(ES2Label_5);
-		ES2Label_5.setIcon(Board);
-		
-		  ES2Label_6 = new JLabel(""); //Slot 6
-		ES2Label_6.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("6") == -1){
-					ES2Label_6.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("6") == -1){
-					ES2Label_6.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("6");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_6.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("6");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_6.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("6") == -1){
-					ES2Label_6.setIcon(Board_over);
-				}	
-			}
-		});
-		ES2Label_6.setIcon(Board);		
-		ES2Label_6.setBounds(75, 27, 14, 193);
-		panel_12.add(ES2Label_6);
-		
-		  ES2Label_7 = new JLabel(""); //Slot 7
-		ES2Label_7.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("7") == -1){
-					ES2Label_7.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("7") == -1){
-					ES2Label_7.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("7");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_7.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("7");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_7.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("7") == -1){
-					ES2Label_7.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_7.setIcon(Board);
-		ES2Label_7.setBounds(88, 27, 14, 193);
-		panel_12.add(ES2Label_7);
-		
-		  ES2Label_8 = new JLabel(""); // Slot 8
-		ES2Label_8.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("8") == -1){
-					ES2Label_8.setIcon(Board);
-				}	
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("8") == -1){
-					ES2Label_8.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("8");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_8.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("8");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_8.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("8") == -1){
-					ES2Label_8.setIcon(Board_over);
-				}	
-			}
-		});
-		ES2Label_8.setIcon(Board);
-		ES2Label_8.setBounds(101, 27, 14, 193);
-		panel_12.add(ES2Label_8);
-		
-		  ES2Label_9 = new JLabel(""); // Slot 9
-		ES2Label_9.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("9") == -1){
-					ES2Label_9.setIcon(Board);
-				}	
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("9") == -1){
-					ES2Label_9.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("9");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_9.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("9");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_9.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("9") == -1){
-					ES2Label_9.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_9.setIcon(Board);
-		ES2Label_9.setBounds(114, 27, 14, 193);
-		panel_12.add(ES2Label_9);
-		
-		  ES2Label_10 = new JLabel(""); // Slot 10
-		ES2Label_10.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("10") == -1){
-					ES2Label_10.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("10") == -1){
-					ES2Label_10.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("10");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_10.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("10");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_10.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("10") == -1){
-					ES2Label_10.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_10.setIcon(Board);
-		ES2Label_10.setBounds(127, 27, 14, 193);
-		panel_12.add(ES2Label_10);
-		
-		  ES2Label_11 = new JLabel(""); //Slot 11
-		ES2Label_11.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("11") == -1){
-					ES2Label_11.setIcon(Board);			
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("11") == -1){
-					ES2Label_11.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("11");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_11.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("11");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_11.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("11") == -1){
-					ES2Label_11.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_11.setIcon(Board);
-		ES2Label_11.setBounds(140, 27, 14, 193);
-		panel_12.add(ES2Label_11);
+		p = 36;
+		for(int i=0; i<24; i++){
+			ES2board[i] = new JLabel("");
+			ES2board[i].addMouseListener(ES2boardEv);
+			ES2board[i].addMouseMotionListener(ES2boardMo);
+			ES2board[i].setBounds(p, 27, 14, 193);
+			panel_12.add(ES2board[i]);
+			ES2board[i].setIcon(Board);
+			p+=13;
+		}
 		
 		
-		  ES2Label_12 = new JLabel(""); // Slot 12
-		ES2Label_12.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("12") == -1){
-					ES2Label_12.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("12") == -1){
-					ES2Label_12.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("12");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_12.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("12");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_12.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("12") == -1){
-					ES2Label_12.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_12.setIcon(Board);
-		ES2Label_12.setBounds(153, 27, 14, 193);
-		panel_12.add(ES2Label_12);
-		
-		  ES2Label_13 = new JLabel(""); // Slot 13
-		ES2Label_13.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("13") == -1){
-					ES2Label_13.setIcon(Board);
-				}	
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("13") == -1){
-					ES2Label_13.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("13");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_13.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("13");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_13.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("13") == -1){
-					ES2Label_13.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_13.setIcon(Board);
-		ES2Label_13.setBounds(166, 27, 14, 193);
-		panel_12.add(ES2Label_13);
-		
-		  ES2Label_14 = new JLabel(""); // Slot 14
-		ES2Label_14.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("14") == -1){
-					ES2Label_14.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("14") == -1){
-					ES2Label_14.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("14");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_14.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("14");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_14.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("14") == -1){
-					ES2Label_14.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_14.setIcon(Board);
-		ES2Label_14.setBounds(179, 27, 14, 193);
-		panel_12.add(ES2Label_14);
-		
-		  ES2Label_15 = new JLabel(""); // Slot 15
-		ES2Label_15.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("15") == -1){
-					ES2Label_15.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("15") == -1){
-					ES2Label_15.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("15");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_15.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("15");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_15.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("15") == -1){
-					ES2Label_15.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_15.setIcon(Board);
-		ES2Label_15.setBounds(192, 27, 14, 193);
-		panel_12.add(ES2Label_15);
-		
-		  ES2Label_16 = new JLabel(""); //Slot 16
-		ES2Label_16.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("16") == -1){
-					ES2Label_16.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("16") == -1){
-					ES2Label_16.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("16");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_16.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("16");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_16.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("16") == -1){
-					ES2Label_16.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_16.setIcon(Board);
-		ES2Label_16.setBounds(205, 27, 14, 193);
-		panel_12.add(ES2Label_16);
-		
-		  ES2Label_17 = new JLabel(""); // Slot 17
-		ES2Label_17.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("17") == -1){
-					ES2Label_17.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("17") == -1){
-					ES2Label_17.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("17");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_17.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("17");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_17.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("17") == -1){
-					ES2Label_17.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_17.setIcon(Board);
-		ES2Label_17.setBounds(218, 27, 14, 193);
-		panel_12.add(ES2Label_17);
-		
-		  ES2Label_18 = new JLabel(""); // Slot 18
-		ES2Label_18.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("18") == -1){
-					ES2Label_18.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("18") == -1){
-					ES2Label_18.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("18");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_18.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("18");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_18.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("18") == -1){
-					ES2Label_18.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_18.setIcon(Board);
-		ES2Label_18.setBounds(231, 27, 14, 193);
-		panel_12.add(ES2Label_18);
-		
-		  ES2Label_19 = new JLabel(""); // Slot 19
-		ES2Label_19.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("19") == -1){
-					ES2Label_19.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("19") == -1){
-					ES2Label_19.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("19");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_19.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("19");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_19.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("19") == -1){
-					ES2Label_19.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_19.setIcon(Board);
-		ES2Label_19.setBounds(244, 27, 14, 193);
-		panel_12.add(ES2Label_19);
-		
-		  ES2Label_20 = new JLabel(""); // Slot 20
-		ES2Label_20.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("20") == -1){
-					ES2Label_20.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("20") == -1){
-					ES2Label_20.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("20");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_20.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("20");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_20.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("20") == -1){
-					ES2Label_20.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_20.setIcon(Board);
-		ES2Label_20.setBounds(257, 27, 14, 193);
-		panel_12.add(ES2Label_20);
-		
-		  ES2Label_21 = new JLabel(""); // Slot 21
-		ES2Label_21.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("21") == -1){
-					ES2Label_21.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("21") == -1){
-					ES2Label_21.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("21");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_21.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("21");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_21.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("21") == -1){
-					ES2Label_21.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_21.setIcon(Board);
-		ES2Label_21.setBounds(270, 27, 14, 193);
-		panel_12.add(ES2Label_21);
-		
-		  ES2Label_22 = new JLabel(""); // Slot 22
-		ES2Label_22.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("22") == -1){
-					ES2Label_22.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("22") == -1){
-					ES2Label_22.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("22");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_22.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("22");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_22.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("22") == -1){
-					ES2Label_22.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_22.setIcon(Board);
-		ES2Label_22.setBounds(283, 27, 14, 193);
-		panel_12.add(ES2Label_22);
-		
-		  ES2Label_23 = new JLabel(""); // Slot 23
-		ES2Label_23.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("23") == -1){
-					ES2Label_23.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("23") == -1){
-					ES2Label_23.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("23");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_23.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("23");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_23.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("23") == -1){
-					ES2Label_23.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_23.setIcon(Board);
-		ES2Label_23.setBounds(296, 27, 14, 193);
-		panel_12.add(ES2Label_23);
-		
-		  ES2Label_24 = new JLabel(""); // Slot 24
-		ES2Label_24.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("24") == -1){
-					ES2Label_24.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("24") == -1){
-					ES2Label_24.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("24");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_24.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("24");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_24.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("24") == -1){
-					ES2Label_24.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_24.setIcon(Board);
-		ES2Label_24.setBounds(309, 27, 14, 193);
-		panel_12.add(ES2Label_24);
-		
-		  ES2Label_25 = new JLabel(""); // Slot 25
-		ES2Label_25.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("25") == -1){
-					ES2Label_25.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("25") == -1){
-					ES2Label_25.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("25");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_25.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("25");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_25.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("25") == -1){
-					ES2Label_25.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_25.setIcon(Board);
-		ES2Label_25.setBounds(322, 27, 14, 193);
-		panel_12.add(ES2Label_25);
-		
-		  ES2Label_26 = new JLabel(""); // Slot 26
-		ES2Label_26.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("26") == -1){
-					ES2Label_26.setIcon(Board);
-				}
-			}
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("26") == -1){
-					ES2Label_26.setIcon(Board_selected);
-					SlotData newBoard = new SlotData();
-					newBoard.set_Slot("26");
-					RNC.add_ES2_SlotData(newBoard);
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}else{
-					ES2Label_26.setIcon(Board);
-					RNC.delete_ES2_SlotData_byName("26");
-					textField.setText(String.valueOf(RNC.get_Total_Board()));
-					textField_1.setText(RNC.get_Total_Board_List());
-				}
-			}
-		});
-		ES2Label_26.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0) {
-				if (RNC.get_ES2_SlotData_byName("26") == -1){
-					ES2Label_26.setIcon(Board_over);
-				}
-			}
-		});
-		ES2Label_26.setIcon(Board);
-		ES2Label_26.setBounds(335, 27, 14, 193);
-		panel_12.add(ES2Label_26);
 		
 		JLabel ES2Label_27 = new JLabel("");
 		ES2Label_27.setIcon(new ImageIcon(rncMain.class.getResource("/images/SCXB3.png")));
@@ -2357,176 +1170,25 @@ public class rncMain {
 		JLabel ES2Label_28 = new JLabel("");
 		ES2Label_28.setIcon(new ImageIcon(rncMain.class.getResource("/images/CMXB3.png")));
 		ES2Label_28.setBounds(361, 27, 14, 193);
-		panel_12.add(ES2Label_28);		
+		panel_12.add(ES2Label_28);
 		
-		JLabel ES2Label_1_1 = new JLabel("1");
-		ES2Label_1_1.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		ES2Label_1_1.setBounds(8, 10, 12, 15);
-		panel_12.add(ES2Label_1_1);
-		ES2Label_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel ES2Label_1_2 = new JLabel("2");
-		ES2Label_1_2.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_2.setBounds(24, 10, 12, 15);
-		panel_12.add(ES2Label_1_2);
-		
-		JLabel ES2Label_1_3 = new JLabel("3");
-		ES2Label_1_3.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_3.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_3.setBounds(37, 10, 12, 15);
-		panel_12.add(ES2Label_1_3);
-		
-		JLabel ES2Label_1_4 = new JLabel("4");
-		ES2Label_1_4.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_4.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_4.setBounds(50, 10, 12, 15);
-		panel_12.add(ES2Label_1_4);
-		
-		JLabel ES2Label_1_5 = new JLabel("5");
-		ES2Label_1_5.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_5.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_5.setBounds(63, 10, 12, 15);
-		panel_12.add(ES2Label_1_5);
-		
-		JLabel ES2Label_1_6 = new JLabel("6");
-		ES2Label_1_6.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_6.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_6.setBounds(76, 10, 12, 15);
-		panel_12.add(ES2Label_1_6);
-		
-		JLabel ES2Label_1_7 = new JLabel("7");
-		ES2Label_1_7.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_7.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_7.setBounds(88, 10, 12, 15);
-		panel_12.add(ES2Label_1_7);
-		
-		JLabel ES2Label_1_8 = new JLabel("8");
-		ES2Label_1_8.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_8.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_8.setBounds(101, 10, 12, 15);
-		panel_12.add(ES2Label_1_8);
-		
-		JLabel ES2Label_1_9 = new JLabel("9");
-		ES2Label_1_9.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_9.setFont(new Font("Vrinda", Font.PLAIN, 11));
-		ES2Label_1_9.setBounds(114, 10, 12, 15);
-		panel_12.add(ES2Label_1_9);
-		
-		JLabel ES2Label_1_10 = new JLabel("10");
-		ES2Label_1_10.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_10.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_10.setBounds(127, 10, 12, 15);
-		panel_12.add(ES2Label_1_10);
-		
-		JLabel ES2Label_1_11 = new JLabel("11");
-		ES2Label_1_11.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_11.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_11.setBounds(141, 10, 12, 15);
-		panel_12.add(ES2Label_1_11);
-		
-		JLabel ES2Label_1_12 = new JLabel("12");
-		ES2Label_1_12.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_12.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_12.setBounds(154, 10, 12, 15);
-		panel_12.add(ES2Label_1_12);
-		
-		JLabel ES2Label_1_13 = new JLabel("13");
-		ES2Label_1_13.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_13.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_13.setBounds(167, 10, 12, 15);
-		panel_12.add(ES2Label_1_13);
-		
-		JLabel ES2Label_1_14 = new JLabel("14");
-		ES2Label_1_14.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_14.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_14.setBounds(180, 10, 12, 15);
-		panel_12.add(ES2Label_1_14);
-		
-		JLabel ES2Label_1_15 = new JLabel("15");
-		ES2Label_1_15.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_15.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_15.setBounds(193, 10, 12, 15);
-		panel_12.add(ES2Label_1_15);
-		
-		JLabel ES2Label_1_16 = new JLabel("16");
-		ES2Label_1_16.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_16.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_16.setBounds(206, 10, 12, 15);
-		panel_12.add(ES2Label_1_16);
-		
-		JLabel ES2Label_1_17 = new JLabel("17");
-		ES2Label_1_17.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_17.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_17.setBounds(219, 10, 12, 15);
-		panel_12.add(ES2Label_1_17);
-		
-		JLabel ES2Label_1_18 = new JLabel("18");
-		ES2Label_1_18.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_18.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_18.setBounds(232, 10, 12, 15);
-		panel_12.add(ES2Label_1_18);
-		
-		JLabel ES2Label_1_19 = new JLabel("19");
-		ES2Label_1_19.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_19.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_19.setBounds(245, 10, 12, 15);
-		panel_12.add(ES2Label_1_19);
-		
-		JLabel ES2Label_1_20 = new JLabel("20");
-		ES2Label_1_20.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_20.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_20.setBounds(258, 10, 12, 15);
-		panel_12.add(ES2Label_1_20);
-		
-		JLabel ES2Label_1_21 = new JLabel("21");
-		ES2Label_1_21.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_21.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_21.setBounds(271, 10, 12, 15);
-		panel_12.add(ES2Label_1_21);				
-		
-		JLabel ES2Label_1_22 = new JLabel("22");		
-		ES2Label_1_22.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_22.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_22.setBounds(284, 10, 12, 15);
-		panel_12.add(ES2Label_1_22);
-		
-		JLabel ES2Label_1_23 = new JLabel("23");		
-		ES2Label_1_23.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_23.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_23.setBounds(297, 10, 12, 15);
-		panel_12.add(ES2Label_1_23);
-		
-		JLabel ES2Label_1_24 = new JLabel("24");		
-		ES2Label_1_24.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_24.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_24.setBounds(310, 10, 12, 15);
-		panel_12.add(ES2Label_1_24);
-		
-		JLabel ES2Label_1_25 = new JLabel("25");
-		ES2Label_1_25.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_25.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_25.setBounds(323, 10, 12, 15);
-		panel_12.add(ES2Label_1_25);
-		
-		JLabel ES2Label_1_26 = new JLabel("26");
-		ES2Label_1_26.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_26.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_26.setBounds(336, 10, 12, 15);
-		panel_12.add(ES2Label_1_26);
-		
-		JLabel ES2Label_1_27 = new JLabel("27");
-		ES2Label_1_27.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_27.setFont(new Font("Vrinda", Font.PLAIN, 10));
-		ES2Label_1_27.setBounds(349, 10, 12, 15);
-		panel_12.add(ES2Label_1_27);
-		
-		JLabel ES2Label_1_28 = new JLabel("28");
-		ES2Label_1_28.setHorizontalAlignment(SwingConstants.CENTER);
-		ES2Label_1_28.setFont(new Font("Vrinda", Font.PLAIN, 12));
-		ES2Label_1_28.setBounds(364, 10, 14, 15);
-		panel_12.add(ES2Label_1_28);
-								
+		// Fill label for ES1 subrack slot title
+		for(int i=0; i<28; i++){
+			ES2label[i] = new JLabel(String.valueOf(i+1));
+			if (i == 0 | i == 27)
+				ES2label[i].setFont(new Font("Vrinda", Font.PLAIN, 12));
+			else if (i < 9)
+				ES2label[i].setFont(new Font("Vrinda", Font.PLAIN, 11));
+			else
+				ES2label[i].setFont(new Font("Vrinda", Font.PLAIN, 10));
+			if (i == 27)
+				ES2label[i].setBounds(MSSlot[i], 10, 14, 15);
+			else
+				ES2label[i].setBounds(MSSlot[i], 10, 12, 15);
+ 			panel_12.add(ES2label[i]);
+			ES2label[i].setHorizontalAlignment(SwingConstants.CENTER);
+		}
+						
 		
 		JLabel ES2Label = new JLabel("Subrack ES-2");
 		ES2Label.setBounds(293, 231, 99, 14);
