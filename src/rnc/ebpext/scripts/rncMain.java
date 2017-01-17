@@ -44,6 +44,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
 
 public class rncMain {
 
@@ -568,7 +569,7 @@ public class rncMain {
 		});
 		panel.add(btnSaveProject);
 		
-		JButton btnSaveCommandFile = new JButton("Save Create MO Command File");
+		JButton btnSaveCommandFile = new JButton("Save MO Command File");
 		btnSaveCommandFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {	
 				JFileChooser FilleDLG = new JFileChooser();
@@ -599,6 +600,8 @@ public class rncMain {
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_3 = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel_3.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
 		panel_1.add(panel_3, BorderLayout.NORTH);
 		
 		JLabel lblCountOfBoard = new JLabel("Boards:");
@@ -619,7 +622,7 @@ public class rncMain {
 		textField_1.setEditable(false);
 		textField_1.setBackground(SystemColor.menu);
 		panel_3.add(textField_1);
-		textField_1.setColumns(30);
+		textField_1.setColumns(25);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		panel_1.add(tabbedPane, BorderLayout.CENTER);
