@@ -7,13 +7,9 @@ For **EPB** board expansion you need to enter some input data:
 **1.** Choose subracks and board slots, where board should be inserted. Count of selected boards and their position will show in "**Boards:**" and "**Selected Slots:**".
 
 **2.**  You need to enter next network parameters in the right side of application  (**Iu_CS** interfaces, **Iu_PS** interfaces and **IUB** interfaces) for expansion.
-
 	2a. "**Left Default GW**",  "**Right Default GW**" - this is Default Gateway for the left side of subrack (till 14 slot) and DGW for the right side of subrack (from 15 slot). Default GW for the left and right side you can see in the existing boards configuration.
-	
 	2b. "**Net prefix**" - this is network mask for the current interface (usually "/24")
-	
 	2c. "**VLAN**" - Virtual Local Area Network for current interface (usually for  **Iu_CS** interfaces is **264**, for **Iu_PS** interfaces is 257, for IUB interfaces is  **600**)
-	
 	2d. "**IP From**" , "**IP To**" this is range IP address for current interface. For **Iu_PS** count of IP address **equals** count of boards. For **Iu_CS** and **IUB** count of **IP address** in **2 times more** then board count.  The sequence of address assignment for boards is the same as sequence in "**Selected Slots:**".
 	
 **3.** Set "**Start PdrDevice Number**". This is the start number of new **PdrDevice** in pool. You can see the last number in configuration of RNC in route «**ManagedElement=1,Equipment=1,SpDevicePool=PdrDevice**». For new board this number will be next.
