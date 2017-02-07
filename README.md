@@ -1,6 +1,6 @@
 # RNC_Expansion
 
-###This is small application for simply **3G** expansion **Ericsson WCDMA RNC EVOC 8200** by **EPB** board with few clicks.###
+###This is small application for simply **3G mobile** expansion **Ericsson WCDMA RNC EVOC 8200** by **EPB** board with few clicks.###
 
 For **EPB** board expansion you need to enter some input data:
 
